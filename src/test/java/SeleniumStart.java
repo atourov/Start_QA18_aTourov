@@ -26,24 +26,32 @@ public class SeleniumStart {
     @Test
     public void testLogin() {
 //        System.out.println("Test is over");
-        WebElement element = wd.findElement(By.tagName("script"));
-        WebElement phoneBookID = wd.findElement(By.id("root"));
-        WebElement phoneBookClass1 = wd.findElement(By.className("container"));
+        wd.findElement(By.tagName("script"));
+        wd.findElement(By.id("root"));
+        wd.findElement(By.className("container"));
 
 
         List<WebElement> elements = wd.findElements(By.tagName("a"));
         System.out.println(elements.size());
+        wd.findElements(By.cssSelector("a"));
+        wd.findElements(By.cssSelector("div>a"));
 
-        List<WebElement> phoneBookClass = wd.findElements(By.className("active"));
+        List<WebElement> phoneBookClass = wd.findElements(By.className("navbar-component_nav__1X_4m"));
         System.out.println(phoneBookClass.size());
+        wd.findElements(By.cssSelector("[class='navbar-component_nav__1X_4m']"));
+        wd.findElements(By.cssSelector(".navbar-component_nav__1X_4m"));
+
 
         List<WebElement> phoneBookLinkedText = wd.findElements(By.linkText("LOGIN"));
         System.out.println(phoneBookLinkedText.size());
+        List<WebElement> cssLogin = wd.findElements(By.cssSelector("div>a:last-child"));
+        System.out.println(cssLogin.size());
 
-        List<WebElement> phoneBookPartial = wd.findElements(By.partialLinkText("O"));
+        List<WebElement> phoneBookPartial = wd.findElements(By.partialLinkText("OG"));
         System.out.println(phoneBookPartial.size());
-
-
+        wd.findElements(By.cssSelector("OG"));
+        wd.findElements(By.cssSelector("[OG]"));
+        //wd.findElements(By.cssSelector("[*=OG]"));
 
 
 
